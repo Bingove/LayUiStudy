@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xhs.center.dao.master.EcgMapper">
+  <resultMap id="BaseResultMap" type="com.bingove.layui.model.master.Ecg">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <result column="ecgId" jdbcType="VARCHAR" property="ecgid" />
+    <result column="deviceId" jdbcType="VARCHAR" property="deviceid" />
+    <result column="eventCode" jdbcType="VARCHAR" property="eventcode" />
+    <result column="taskCode" jdbcType="VARCHAR" property="taskcode" />
+    <result column="patientName" jdbcType="VARCHAR" property="patientname" />
+    <result column="patientAge" jdbcType="VARCHAR" property="patientage" />
+    <result column="patientSex" jdbcType="VARCHAR" property="patientsex" />
+    <result column="patientType" jdbcType="VARCHAR" property="patienttype" />
+    <result column="checkDepartment" jdbcType="VARCHAR" property="checkdepartment" />
+    <result column="inpatientWard" jdbcType="VARCHAR" property="inpatientward" />
+    <result column="bedNum" jdbcType="INTEGER" property="bednum" />
+    <result column="checkDoctorName" jdbcType="VARCHAR" property="checkdoctorname" />
+    <result column="checkDoctor" jdbcType="VARCHAR" property="checkdoctor" />
+    <result column="heartRate" jdbcType="VARCHAR" property="heartrate" />
+    <result column="QRSDuration" jdbcType="VARCHAR" property="qrsduration" />
+    <result column="QRS_AXIS" jdbcType="VARCHAR" property="qrsAxis" />
+    <result column="QT" jdbcType="VARCHAR" property="qt" />
+    <result column="QTc" jdbcType="VARCHAR" property="qtc" />
+    <result column="P_waveDuration" jdbcType="VARCHAR" property="pWaveduration" />
+    <result column="PR" jdbcType="VARCHAR" property="pr" />
+    <result column="P_AXIS" jdbcType="VARCHAR" property="pAxis" />
+    <result column="RV1" jdbcType="REAL" property="rv1" />
+    <result column="Rv5" jdbcType="VARCHAR" property="rv5" />
+    <result column="RV6" jdbcType="REAL" property="rv6" />
+    <result column="Sv1" jdbcType="VARCHAR" property="sv1" />
+    <result column="SV2" jdbcType="REAL" property="sv2" />
+    <result column="SV5" jdbcType="REAL" property="sv5" />
+    <result column="Rv5_Sv1" jdbcType="REAL" property="rv5Sv1" />
+    <result column="T_wave" jdbcType="VARCHAR" property="tWave" />
+    <result column="T_AXIS" jdbcType="VARCHAR" property="tAxis" />
+    <result column="P_RInterval" jdbcType="VARCHAR" property="pRinterval" />
+    <result column="ventricularRate" jdbcType="INTEGER" property="ventricularrate" />
+    <result column="atrialRate" jdbcType="INTEGER" property="atrialrate" />
+    <result column="sendTime" jdbcType="TIMESTAMP" property="sendtime" />
+    <result column="createTime" jdbcType="TIMESTAMP" property="createtime" />
+    <result column="patientBirthTime" jdbcType="VARCHAR" property="patientbirthtime" />
+    <result column="deviceEcgId" jdbcType="VARCHAR" property="deviceecgid" />
+    <result column="patientId" jdbcType="VARCHAR" property="patientid" />
+    <result column="ecgStatus" jdbcType="VARCHAR" property="ecgstatus" />
+    <result column="measureTime" jdbcType="TIMESTAMP" property="measuretime" />
+    <result column="diagnoseResult" jdbcType="VARCHAR" property="diagnoseresult" />
+    <result column="diagnoseDoctorName" jdbcType="VARCHAR" property="diagnosedoctorname" />
+    <result column="diagnoseDoctorId" jdbcType="VARCHAR" property="diagnosedoctorid" />
+    <result column="diagnoseCode" jdbcType="INTEGER" property="diagnosecode" />
+    <result column="reportDate" jdbcType="TIMESTAMP" property="reportdate" />
+    <result column="fromStationId" jdbcType="VARCHAR" property="fromstationid" />
+    <result column="toStationId" jdbcType="VARCHAR" property="tostationid" />
+    <result column="sendStatus" jdbcType="VARCHAR" property="sendstatus" />
+    <result column="sendUser" jdbcType="VARCHAR" property="senduser" />
+    <result column="transferFlag" jdbcType="INTEGER" property="transferflag" />
+    <result column="mobileExpertId" jdbcType="VARCHAR" property="mobileexpertid" />
+    <result column="mobileExpertName" jdbcType="VARCHAR" property="mobileexpertname" />
+    <result column="suggestTime" jdbcType="TIMESTAMP" property="suggesttime" />
+    <result column="suggestStatus" jdbcType="VARCHAR" property="suggeststatus" />
+    <result column="groupId" jdbcType="VARCHAR" property="groupid" />
+    <result column="fromDevice" jdbcType="VARCHAR" property="fromdevice" />
+    <result column="samplingRate" jdbcType="INTEGER" property="samplingrate" />
+    <result column="ecgType" jdbcType="INTEGER" property="ecgtype" />
+    <result column="uVpb" jdbcType="VARCHAR" property="uvpb" />
+    <result column="compressionMode" jdbcType="INTEGER" property="compressionmode" />
+    <result column="leadNameList" jdbcType="VARCHAR" property="leadnamelist" />
+    <result column="leadNum" jdbcType="INTEGER" property="leadnum" />
+    <result column="fromDeviceName" jdbcType="VARCHAR" property="fromdevicename" />
+    <result column="QRS_TopPoints" jdbcType="VARCHAR" property="qrsToppoints" />
+    <result column="autoDiagnoseResult" jdbcType="VARCHAR" property="autodiagnoseresult" />
+    <result column="autoDiagnoseDescription" jdbcType="VARCHAR" property="autodiagnosedescription" />
+    <result column="patientAgeUnit" jdbcType="VARCHAR" property="patientageunit" />
+    <result column="QTcH" jdbcType="VARCHAR" property="qtch" />
+    <result column="sendStation" jdbcType="VARCHAR" property="sendstation" />
+    <result column="diagnoseDoctorJobNum" jdbcType="VARCHAR" property="diagnosedoctorjobnum" />
+    <result column="Q_TInterval" jdbcType="VARCHAR" property="qTinterval" />
+    <result column="diagnoseDescription" jdbcType="VARCHAR" property="diagnosedescription" />
+    <result column="DPTcode" jdbcType="VARCHAR" property="dptcode" />
+    <result column="scale" jdbcType="VARCHAR" property="scale" />
+    <result column="electricAxis" jdbcType="VARCHAR" property="electricaxis" />
+    <result column="waveData" jdbcType="LONGVARCHAR" property="wavedata" />
+    <result column="xmlContent" jdbcType="LONGVARCHAR" property="xmlcontent" />
+    <result column="description" jdbcType="LONGVARCHAR" property="description" />
+    <result column="mobileSuggestion" jdbcType="LONGVARCHAR" property="mobilesuggestion" />
+    <result column="mobileDescription" jdbcType="LONGVARCHAR" property="mobiledescription" />
+    <result column="diagnosticReport" jdbcType="LONGVARCHAR" property="diagnosticreport" />
+  </resultMap>
+</mapper>

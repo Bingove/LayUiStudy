@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="zh-CN" xmlns:th="http://www.thymeleaf.org" style="height: 100%;">
+<head>
+    <meta charset="UTF-8">
+    <title>Vue Study</title>
+   <!-- <script src="https://cdn.staticfile.org/vue/2.4.2/vue.min.js"></script>-->
+   <!-- <script src="/vue/vue.js"></script>-->
+    <script th:src="@{/vue/vue.js}"></script>
+    <script th:src="@{/libs/jquery/jquery.min.js}"></script>
+    <script src="https://cdn.staticfile.org/vue-resource/1.5.1/vue-resource.min.js"></script>
+</head>
+<body>
+<div id="vue_det">
+    <h1>姓名 : {{name}}</h1>
+    <h2>年龄 : {{age}}</h2>
+    <h1>家庭住址 : {{address}}</h1>
+    <h1>{{details()}}</h1>
+</div>
+<div>
+    姓名:<input type="text" name="name" id="name"></br>
+    年龄:<input type="number" name="age" id="age"></br>
+    <button onclick="om()">点击</button>
+</div>
+<script type="text/javascript">
+    function om() {
+     $.ajax({
+         url:"/post.do",
+         type:"POST",
+         data:{
+             "name":$("#name").val(),
+             "age":$("#age").val()
+         },
+         success:function (data) {
+           if (data.success) {
+               console.log(data.msg);
+           }
+         }
+     })
+    }
+    var vm = new Vue({
+        el: '#vue_det',
+        data: {
+            name: "刘淼",
+            age: "30",
+            address: "河南省郑州市金水区农业路东段23号"
+        },
+        methods: {
+            details: function() {
+                return  this.name + " - 学的不仅是技术，更是梦想！";
+            }
+        }
+    })
+</script>
+</body>
+</html>

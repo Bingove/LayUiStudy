@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+    <properties resource="generator/generatorConfig.properties"/>
+    <context id="Mysql" targetRuntime="MyBatis3Simple" defaultModelType="flat">
+        <property name="javaFileEncoding" value="UTF-8"/>
+
+
+        <!--通用 Mapper 插件，可以生成带注解的实体类-->
+       <plugin type="${mapper.plugin}">
+            <property name="mappers" value="com.xhs.center.utils.MyMapper"/>
+            <property name="caseSensitive" value="true"/>
+            <property name="forceAnnotation" value="true"/>
+            <property name="beginningDelimiter" value="`"/>
+            <property name="endingDelimiter" value="`"/>
+        </plugin>
+
+        <commentGenerator>
+            <!-- 是否去除自动生成的注释 true：是 ： false:否 -->
+            <property name="suppressAllComments" value="true"/>
+            <property name="suppressDate" value="true"/>
+            <property name="addRemarkComments" value="true"/>
+        </commentGenerator>
+
+        <!-- 数据库链接URL、用户名、密码 -->
+        <jdbcConnection driverClass="${mysql.jdbc.driver}"
+                        connectionURL="${mysql.jdbc.url}"
+                        userId="${mysql.jdbc.username}"
+                        password="${mysql.jdbc.password}">
+        </jdbcConnection>
+
+        <!-- 生成模型的包名和位置 -->
+        <javaModelGenerator targetPackage="com.xhs.center.model.master" targetProject="src/main/java">
+            <property name="trimStrings" value="true"/>
+        </javaModelGenerator>
+
+        <!-- 生成的映射文件包名和位置 -->
+        <sqlMapGenerator targetPackage="mapper.master" targetProject="src/main/resources">
+            <property name="enableSubPackages" value="true"/>
+        </sqlMapGenerator>
+
+        <javaClientGenerator targetPackage="com.xhs.center.dao.master" targetProject="src/main/java" type="XMLMAPPER">
+            <property name="enableSubPackages" value="true"/>
+        </javaClientGenerator>
+
+        <table tableName="event----">
+            <!--mysql 配置-->
+           <!-- <generatedKey column="id" sqlStatement="SELECT LAST_INSERT_ID()" identity="true"/>-->
+            <!--oracle 配置-->
+            <!--<generatedKey column="id" sqlStatement="select SEQ_{1}.nextval from dual" identity="false" type="pre"/>-->
+        </table>
+    </context>
+
+<!--    <context id="SqlServer" targetRuntime="MyBatis3Simple" defaultModelType="flat">
+        <property name="javaFileEncoding" value="UTF-8"/>
+
+
+        &lt;!&ndash;通用 Mapper 插件，可以生成带注解的实体类&ndash;&gt;
+        <plugin type="${mapper.plugin}">
+            <property name="mappers" value="com.xhs.center.utils.MyMapper"/>
+            <property name="caseSensitive" value="true"/>
+            <property name="forceAnnotation" value="true"/>
+            <property name="beginningDelimiter" value="["/>
+            <property name="endingDelimiter" value="]"/>
+        </plugin>
+
+        <commentGenerator>
+            &lt;!&ndash; 是否去除自动生成的注释 true：是 ： false:否 &ndash;&gt;
+            <property name="suppressAllComments" value="true"/>
+            <property name="suppressDate" value="true"/>
+            <property name="addRemarkComments" value="true"/>
+        </commentGenerator>
+
+        &lt;!&ndash; 数据库链接URL、用户名、密码 &ndash;&gt;
+        <jdbcConnection driverClass="${SqlServer.jdbc.driver}"
+                        connectionURL="${SqlServer.jdbc.url}"
+                        userId="${SqlServer.jdbc.username}"
+                        password="${SqlServer.jdbc.password}">
+        </jdbcConnection>
+
+        &lt;!&ndash; 生成模型的包名和位置 &ndash;&gt;
+        <javaModelGenerator targetPackage="com.xhs.center.model.cti" targetProject="src/main/java">
+            <property name="trimStrings" value="true"/>
+        </javaModelGenerator>
+
+        &lt;!&ndash; 生成的映射文件包名和位置 &ndash;&gt;
+        <sqlMapGenerator targetPackage="mapper/cti" targetProject="src/main/resources">
+            <property name="enableSubPackages" value="true"/>
+        </sqlMapGenerator>
+
+        <javaClientGenerator targetPackage="com.xhs.center.dao.cti" targetProject="src/main/java" type="XMLMAPPER">
+            <property name="enableSubPackages" value="true"/>
+        </javaClientGenerator>
+
+        <table tableName="queue_phone">
+            &lt;!&ndash;SqlServer 配置&ndash;&gt;
+            <generatedKey column="id" sqlStatement="SELECT SCOPE_IDENTITY()" identity="true"/>
+        </table>
+    </context>-->
+</generatorConfiguration>

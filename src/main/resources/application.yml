@@ -1,0 +1,7 @@
+spring:
+  profiles:
+      active : my
+mapper:
+  not-empty: true
+  mappers: com.bingove.layui.utils.MyMapper
+  #MyMapper不能被扫描，不然出错误

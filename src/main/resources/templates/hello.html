@@ -1,0 +1,56 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>hello</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+</head>
+<body>
+<!--/*@thymesVar id="name" type="java.lang.String"*/-->
+<!--<p th:text="'Hello！, ' + ${name} + '!'">3333</p>-->
+<h2>文件下载示例</h2>
+<hr/>
+<a href="/testDownload">下载</a><br/>
+文件名：<input type="text" name="fileName" id="name"><br/>
+<button onclick="xia()">下载</button>
+</body>
+<script src="/libs/jquery/jquery.min.js"></script>
+<script>
+    $(function () {
+        console.log("ww");
+        //initData();
+    });
+
+    function xia() {
+        $.ajax({
+            type: 'GET',
+            url: "/testDownload",
+            data: {fileName: $("#name").val()},
+            success: function (res) {
+                //console.log("data", res);
+            }
+        })
+    }
+
+    function initData() {
+        var data = {
+            stationId: "1811037lF_FFAke",
+            pageCount: 4,
+            currentPage: 1,
+            json: {
+                name: "zhnasn",
+                age: 30
+            }
+        };
+        $.ajax({
+            type: 'POST',
+            url: "http://localhost:8067/monitor/list",
+            contentType: 'application/json',
+            data: JSON.stringify(data),
+            success: function (res) {
+                console.log("data", res);
+            }
+        })
+
+    }
+</script>
+</html>

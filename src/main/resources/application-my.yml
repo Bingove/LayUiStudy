@@ -1,0 +1,53 @@
+server:
+  port: 6066
+  tomcat:
+    max-threads: 0
+    uri-encoding: utf-8
+    basedir: target/tomcat
+logging:
+  level:
+    com.bingove.layui.master: debug
+    com.bingove.layui.dao.a: INFO
+  #file: /xhemss/my.log
+ # pattern:
+  #  file: my.log
+spring:
+  mvc:
+      favicon:
+        enabled: false
+  thymeleaf:
+        check-template-location: true
+        check-template: true
+        enabled: true
+        cache: false #生成环境开启缓存
+        prefix: classpath:/templates/  #前缀
+        suffix: .html
+        mode: LEGACYHTML5
+  resources:
+      static-locations: classpath:/static/,file:D:/center_upload_dir/   #配置静态资源目录，以逗号分隔多个目录
+  datasource:
+      druid:
+        master:
+  #        url: jdbc:mysql://192.168.1.120:3306/command_center_yudong?useUnicode=true&characterEncoding=utf8 180.9.0.132
+         #    url: jdbc:mysql://180.9.0.132:3306/zz120?useUnicode=true&characterEncoding=utf8
+          url: jdbc:mysql://121.40.106.120:3306/zz120?useUnicode=true&characterEncoding=utf8
+          username: root
+          password: super120
+          driver-class-name: com.mysql.jdbc.Driver
+          max-active: 30
+          max-wait: 10000
+          validation-query-timeout: 60
+          initial-size: 5
+        criminal:
+        #      url: jdbc:mysql://180.9.0.132:3306/zz_center?useUnicode=true&characterEncoding=utf8
+          #url: jdbc:mysql://118.31.44.95:3306/zz_center?useUnicode=true&characterEncoding=utf8
+          url: jdbc:mysql://121.40.106.120:3306/zz120?useUnicode=true&characterEncoding=utf8
+          username: root
+          password: super120
+     #     password: root
+          driverClassName: com.mysql.jdbc.Driver
+  http:
+    encoding:
+      charset: utf-8
+      enabled: true
+      force: true
