@@ -3,6 +3,7 @@ package com.xhs.center.controller;
 import com.alibaba.dubbo.config.annotation.Reference;
 import com.xhs.api.model.User;
 import com.xhs.api.service.DubboService;
+import groovy.util.logging.Slf4j;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -13,11 +14,13 @@ import org.springframework.web.bind.annotation.RestController;
  * @title: NameController
  * @ToDo
  */
+@Slf4j
 @RestController
 @RequestMapping("/dubbo")
 public class NameController {
     @Reference(version = "1.0.0")
     DubboService dubboService;
+
 
     @RequestMapping("/sayHello")
     public String sayHello() {

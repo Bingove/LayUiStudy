@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="zh-CN" xmlns:th="http://www.thymeleaf.org" style="height: 100%;">
+<head>
+    <meta charset="UTF-8">
+    <title>后台登录</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <!-- load css -->
+    <link rel="stylesheet" type="text/css" href="media/layui/css/layui.css" media="all">
+    <link rel="stylesheet" type="text/css" href="media/css/login.css" media="all">
+</head>
+<body>
+<div>
+    <button onclick="initData()">sss</button>
+</div>
+<!--<script type="text/javascript" src="media/layui/layui.all.js"></script>
+<script type="text/javascript" src="media/js/login.js"></script>-->
+<script th:src="@{/media/layui/layui.all.js}"></script>
+<script th:src="@{/media/js/login.js}"></script>
+<script th:src="@{/media/js/jparticle.jquery.js}"></script>
+<!--互动的粒子动画特效插件  -->
+<!--<script type="text/javascript" src="media/js/jparticle.jquery.js"></script>-->
+<script type="text/javascript">
+
+    //登录链接测试，使用时可删除
+function sss() {
+
+}
+    function initData() {
+    console.log("9999");
+        var data = {
+            userName: "1811037lF_FFAke",
+            password: "12345",
+            address: "张Asa"
+        };
+        $.ajax({
+            type: 'POST',
+            url: "/q1",
+            contentType: 'application/json',
+            data: JSON.stringify(data),
+            //data:data,
+            success: function (res) {
+                console.log("data",res);
+            }
+        })
+    }
+</script>
+</body>
+</html>

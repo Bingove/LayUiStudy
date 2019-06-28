@@ -30,9 +30,9 @@ spring:
         master:
   #        url: jdbc:mysql://192.168.1.120:3306/command_center_yudong?useUnicode=true&characterEncoding=utf8 180.9.0.132
          #    url: jdbc:mysql://180.9.0.132:3306/zz120?useUnicode=true&characterEncoding=utf8
-          url: jdbc:mysql://121.40.106.120:3306/zz120?useUnicode=true&characterEncoding=utf8
+          url: jdbc:mysql://47.102.143.23:3306/zz120?useUnicode=true&characterEncoding=utf8&useSSL=false
           username: root
-          password: super120
+          password: root
           driver-class-name: com.mysql.jdbc.Driver
           max-active: 30
           max-wait: 10000
@@ -51,3 +51,13 @@ spring:
       charset: utf-8
       enabled: true
       force: true
+#对于rabbitMQ的支持
+  rabbitmq:
+    addresses:
+    host: 47.102.143.23
+    port: 5672
+    username: guest
+    password: guest
+
+
+

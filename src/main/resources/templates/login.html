@@ -59,6 +59,20 @@
         var code = $("#code").val();
         var userPwd = $("#userPwd").val();
         if (!code || !userPwd) {
+            $.ajax({
+                type:"POST",
+                url:"aa",
+                data:{},
+                success:function (data) {
+
+                },
+                error:function () {
+
+                }
+            });
+            $.get("a/aa","userPwd="+$("#userPwd").val()+"&psw="+$("#ps").val(),function (data) {
+
+            });
 
         } else {
             $.ajax({

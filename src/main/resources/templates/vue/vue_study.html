@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="zh-CN" xmlns:th="http://www.thymeleaf.org" style="height: 100%;">
+<html lang="zh-CN" xmlns:th="http://www.thymeleaf.org" style="height: 100%;"
+      xmlns:v-bind="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <title>Vue Study</title>
@@ -21,7 +22,25 @@
     年龄:<input type="number" name="age" id="age"></br>
     <button onclick="om()">点击</button>
 </div>
+<div id="app">
+    <pre><a v-bind:href="url">菜鸟教程</a></pre>
+</div>
+<div id="app1">
+    <p v-if="seen">现在你看到我了</p>
+</div>
 <script type="text/javascript">
+    new Vue({
+        el: '#app1',
+        data: {
+            seen: true
+        }
+    })
+    new Vue({
+        el: '#app',
+        data: {
+            url: 'http://www.baidu.com'
+        }
+    });
     function om() {
      $.ajax({
          url:"/post.do",
